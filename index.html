@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ========================================================= -->
+  <!--  EDIT ME: page title + description                         -->
+  <!-- ========================================================= -->
+  <title>MediaVenue — Matched Traffic Network</title>
+  <meta name="description" content="An affiliate network that builds its own traffic and matches it to each client's campaigns — precision over generic clicks." />
+
+  <!-- ============ Favicons (files live in / and /assets/) ============ -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0B0E14" />
+
+  <!-- ================ Link previews (Open Graph + Twitter) ================
+       EDIT ME: og:url and og:image must be ABSOLUTE URLs on your real domain.
+       Replace every "https://mediavenue.net" below with your domain.        -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MediaVenue" />
+  <meta property="og:title" content="MediaVenue — traffic matched to your business" />
+  <meta property="og:description" content="An affiliate network that builds its own traffic and matches it to each client's campaigns — precision over generic clicks." />
+  <meta property="og:url" content="https://mediavenue.net/" />
+  <meta property="og:image" content="https://mediavenue.net/assets/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MediaVenue — traffic matched to your business, not generic clicks." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MediaVenue — traffic matched to your business" />
+  <meta name="twitter:description" content="Owned-and-operated traffic, matched to each client's campaigns and optimised daily." />
+  <meta name="twitter:image" content="https://mediavenue.net/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================= NAV ============================= -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="MediaVenue home">
+      <!-- routing glyph -->
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="4" cy="12" r="2.4" fill="currentColor" />
+        <circle cx="20" cy="5" r="2.4" fill="#34E3C0" />
+        <circle cx="20" cy="19" r="2.4" stroke="currentColor" stroke-width="1.6" />
+        <path d="M6.2 11 18 5.8M6.2 13 18 18.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+      </svg>
+      MediaVenue
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#what">What We Do</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- "Talk to Us" opens a Telegram chat. Replace the username in the href below. -->
+    <a class="btn btn--primary btn--sm nav__cta" href="https://t.me/animatrixx" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Talk to Us
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow"><b>//</b> Owned-and-operated traffic network</p>
+
+          <h1>Traffic matched to <span class="accent-text">your business</span>, not generic clicks.</h1>
+
+          <p class="hero__sub">
+            We build and route our own audiences straight to your campaigns, then
+            tune the match every day. Fewer wasted impressions, higher-intent
+            volume, measurable lift.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Get Started</a>
+            <a class="btn btn--ghost" href="#process">See how it works</a>
+          </div>
+
+          <p class="hero__micro">// Illustrative routing — owned sources matched to client offers</p>
+        </div>
+
+        <!-- routing diagram: left = our sources, right = client campaigns -->
+        <figure class="diagram">
+          <svg viewBox="0 0 520 452" role="img" aria-label="Diagram: owned traffic sources on the left matched by routing lines to client campaigns on the right.">
+            <text class="d-col" x="110" y="22" text-anchor="middle">OWNED SOURCES</text>
+            <text class="d-col" x="410" y="22" text-anchor="middle">CLIENT CAMPAIGNS</text>
+
+            <!-- links (order matters for staggered draw-in animation) -->
+            <g class="d-links">
+              <path class="d-link"               pathLength="1" d="M110 84 L410 120" />
+              <path class="d-link d-link--match" pathLength="1" d="M110 84 L410 214" />
+              <path class="d-link d-link--match" pathLength="1" d="M110 164 L410 120" />
+              <path class="d-link"               pathLength="1" d="M110 164 L410 308" />
+              <path class="d-link"               pathLength="1" d="M110 244 L410 214" />
+              <path class="d-link d-link--match" pathLength="1" d="M110 244 L410 402" />
+              <path class="d-link d-link--match" pathLength="1" d="M110 324 L410 308" />
+              <path class="d-link"               pathLength="1" d="M110 404 L410 402" />
+              <path class="d-link"               pathLength="1" d="M110 404 L410 308" />
+              <path class="d-link"               pathLength="1" d="M110 324 L410 214" />
+            </g>
+
+            <!-- source nodes -->
+            <g>
+              <circle class="d-node" cx="110" cy="84"  r="9" />
+              <circle class="d-node" cx="110" cy="164" r="9" />
+              <circle class="d-node" cx="110" cy="244" r="9" />
+              <circle class="d-node" cx="110" cy="324" r="9" />
+              <circle class="d-node" cx="110" cy="404" r="9" />
+              <text class="d-label" x="110" y="66"  text-anchor="middle">SEARCH</text>
+              <text class="d-label" x="110" y="146" text-anchor="middle">NATIVE</text>
+              <text class="d-label" x="110" y="226" text-anchor="middle">SOCIAL</text>
+              <text class="d-label" x="110" y="306" text-anchor="middle">PUSH</text>
+              <text class="d-label" x="110" y="386" text-anchor="middle">EMAIL</text>
+            </g>
+
+            <!-- campaign nodes -->
+            <g>
+              <circle class="d-node d-node--live" cx="410" cy="120" r="9" />
+              <circle class="d-node d-node--live" cx="410" cy="214" r="9" />
+              <circle class="d-node d-node--live" cx="410" cy="308" r="9" />
+              <circle class="d-node d-node--live" cx="410" cy="402" r="9" />
+              <text class="d-label" x="410" y="102" text-anchor="middle">ECOM</text>
+              <text class="d-label" x="410" y="196" text-anchor="middle">FINANCE</text>
+              <text class="d-label" x="410" y="290" text-anchor="middle">NUTRA</text>
+              <text class="d-label" x="410" y="384" text-anchor="middle">SAAS</text>
+            </g>
+          </svg>
+          <figcaption>// match_engine.v2 — routing owned inventory to campaign profiles</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================= WHAT WE DO ========================= -->
+    <section class="section section--line" id="what">
+      <div class="wrap">
+        <p class="eyebrow">01 <span>/</span> What we do</p>
+        <div class="about__grid">
+          <div class="about__head-col">
+            <div class="section__head" style="margin-bottom: 28px;">
+              <h2>A network that sources its own traffic.</h2>
+            </div>
+            <div class="about__body">
+              <p>
+                Most networks resell whatever inventory a marketplace hands them.
+                <strong>We generate our own</strong> — across search, native, social,
+                push and email — so we always know where a click came from and why
+                it showed up.
+              </p>
+              <p>
+                Then we match. Every campaign is placed against the specific
+                audiences, geos and angles that fit your offer, never dropped into a
+                generic rotation. You get traffic that was <strong>chosen for your
+                business</strong>.
+              </p>
+            </div>
+            <ul class="tags" style="margin-top: 26px;">
+              <li>Owned sources</li>
+              <li>Offer-to-audience matching</li>
+              <li>Transparent placement</li>
+            </ul>
+          </div>
+
+          <aside class="about__panel">
+            <h3>Marketplace clicks vs. matched traffic</h3>
+            <div class="compare">
+              <div class="compare__row is-generic">
+                <span>Generic ad marketplace</span>
+                <span>bought blind</span>
+              </div>
+              <div class="compare__row">
+                <span>Audience built for your vertical</span>
+                <span>known intent</span>
+              </div>
+              <div class="compare__row is-generic">
+                <span>Same rotation as every advertiser</span>
+                <span>no fit</span>
+              </div>
+              <div class="compare__row">
+                <span>Placement mapped to your offer</span>
+                <span>matched</span>
+              </div>
+              <div class="compare__row is-generic">
+                <span>Optimised on a shared dashboard</span>
+                <span>set &amp; forget</span>
+              </div>
+              <div class="compare__row">
+                <span>Reviewed by your manager daily</span>
+                <span>hands-on</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== WHY US =========================== -->
+    <section class="section section--line" id="why">
+      <div class="wrap">
+        <p class="eyebrow">02 <span>/</span> Why us</p>
+        <div class="section__head">
+          <h2>Built for match quality, not volume dumps.</h2>
+          <p>Four things we hold to on every account.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal">
+            <p class="feature__idx">01</p>
+            <div class="feature__viz" aria-hidden="true">
+              <svg viewBox="0 0 90 46">
+                <path class="v-dim" d="M8 23 H82" />
+                <circle class="v-dot" cx="8" cy="23" r="5" />
+                <circle class="v-dot" cx="82" cy="23" r="5" />
+                <path class="v-stroke" d="M8 23 C 34 23, 34 23, 82 23" />
+              </svg>
+            </div>
+            <h3>Matched Campaigns</h3>
+            <p>Traffic and offers paired to your niche, geos and goals. No generic rotation, no filler inventory — just the audiences that fit what you sell.</p>
+          </article>
+
+          <article class="feature reveal">
+            <p class="feature__idx">02</p>
+            <div class="feature__viz" aria-hidden="true">
+              <svg viewBox="0 0 90 46">
+                <circle class="v-dot" cx="16" cy="23" r="5" />
+                <path class="v-stroke" d="M16 23 H74" />
+                <path class="v-stroke" d="M66 15 L74 23 L66 31" />
+              </svg>
+            </div>
+            <h3>Personal Attention</h3>
+            <p>A dedicated manager who knows your account by name. Hands-on setup, a direct line, real answers — not a shared inbox or a ticket queue.</p>
+          </article>
+
+          <article class="feature reveal">
+            <p class="feature__idx">03</p>
+            <div class="feature__viz" aria-hidden="true">
+              <svg viewBox="0 0 90 46">
+                <path class="v-dim" d="M6 8 H84 L58 38 H32 Z" />
+                <path class="v-stroke" d="M32 38 H58" />
+              </svg>
+            </div>
+            <h3>Quality Over Quantity</h3>
+            <p>We optimise for conversions and EPC, not raw click counts. Fewer, better-fitting leads that actually move through your funnel.</p>
+          </article>
+
+          <article class="feature reveal">
+            <p class="feature__idx">04</p>
+            <div class="feature__viz" aria-hidden="true">
+              <svg viewBox="0 0 90 46">
+                <path class="v-dim" d="M8 40 H82" />
+                <path class="v-stroke" d="M10 34 L30 30 L46 22 L64 16 L82 6" />
+                <circle class="v-dot" cx="82" cy="6" r="4" />
+              </svg>
+            </div>
+            <h3>Daily Optimization</h3>
+            <p>Every live campaign is reviewed and adjusted daily — creatives, sources, caps, placements — so performance compounds instead of drifting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= PROCESS =========================== -->
+    <section class="section section--line" id="process">
+      <div class="wrap">
+        <p class="eyebrow">03 <span>/</span> Process</p>
+        <div class="section__head">
+          <h2>Four steps from brief to compounding performance.</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__num" aria-hidden="true"></div>
+            <div>
+              <h3>Understand your needs</h3>
+              <p>We map your offer, target geos, margins and what a good lead is actually worth to you — before a single dollar goes out.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step__num" aria-hidden="true"></div>
+            <div>
+              <h3>Match a tailored campaign</h3>
+              <p>We assemble the audience mix and creative angles from our owned sources that fit that profile, and set caps to your budget.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step__num" aria-hidden="true"></div>
+            <div>
+              <h3>Generate quality traffic</h3>
+              <p>Campaigns go live on traffic we control, with transparent placement and clean tracking you can verify on your side.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step__num" aria-hidden="true"></div>
+            <div>
+              <h3>Optimize daily</h3>
+              <p>Daily reviews trim what underperforms and scale what works. You get a plain-language readout every week.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= RESULTS =========================== -->
+    <section class="section section--line" id="results">
+      <div class="wrap">
+        <p class="eyebrow">04 <span>/</span> Results</p>
+        <div class="section__head">
+          <h2>Numbers here get replaced with your real reporting.</h2>
+        </div>
+
+        <p class="disclaimer">// Illustrative figures — replace with your verified account reporting before this site goes live.</p>
+
+        <div class="stats">
+          <div class="stat stat--lift reveal">
+            <p class="stat__tag">illustrative</p>
+            <p class="stat__num">+41%</p>
+            <p class="stat__label">avg. conversion lift vs. prior marketplace traffic</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__tag">illustrative</p>
+            <p class="stat__num">2.3&times;</p>
+            <p class="stat__label">median ROAS across active client accounts</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__tag">illustrative</p>
+            <p class="stat__num">24h</p>
+            <p class="stat__label">optimization cadence on every live campaign</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__tag">illustrative</p>
+            <p class="stat__num">8</p>
+            <p class="stat__label">avg. days to first optimized scale-up</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CONTACT =========================== -->
+    <section class="section section--line" id="contact">
+      <div class="wrap">
+        <p class="eyebrow">05 <span>/</span> Contact</p>
+        <div class="section__head">
+          <h2>Tell us what you're running.</h2>
+          <p>Send a few lines about your offer and geos. A real person reads it.</p>
+        </div>
+
+        <div class="contact__grid">
+          <form class="form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@company.com" required />
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="What are you running, which geos, and what does a good lead look like?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Send message</button>
+            <p class="form__note">// This form is a template stub. Wire it to your CRM, email handler or form service before launch.</p>
+          </form>
+
+          <div class="form-done" id="formDone" hidden>
+            <b>Thanks — noted.</b>
+            <p class="form__note">
+              // Nothing was sent: this is a template. Connect <code>#contactForm</code>
+              to your backend (Formspree, your CRM, a serverless function) to start
+              receiving real submissions.
+            </p>
+          </div>
+
+          <aside class="next">
+            <h3>What happens next</h3>
+            <ol>
+              <li>A real person reads it — usually the same day.</li>
+              <li>We follow up with a few questions about your offer, geos and margins.</li>
+              <li>If it's a fit, we scope a first matched campaign and agree on caps.</li>
+            </ol>
+            <p class="next__contact">
+              <span>support@mediavenue.net</span>
+              <em>[ Add real contact details, hours and booking link before launch ]</em>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================== FOOTER =========================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__row">
+        <a class="brand" href="#top" aria-label="MediaVenue home">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="4" cy="12" r="2.4" fill="currentColor" />
+            <circle cx="20" cy="5" r="2.4" fill="#34E3C0" />
+            <circle cx="20" cy="19" r="2.4" stroke="currentColor" stroke-width="1.6" />
+            <path d="M6.2 11 18 5.8M6.2 13 18 18.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+          MediaVenue
+        </a>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        Owned traffic, matched to your business. &nbsp;·&nbsp;
+        © <span id="year">2026</span> MediaVenue — template. Replace placeholder copy,
+        logo and legal links with your registered entity details before publishing.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
