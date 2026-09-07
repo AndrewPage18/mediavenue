@@ -244,11 +244,10 @@ img, svg { display: block; max-width: 100%; }
  * ------------------------------------------------------------------ */
 .hero {
   position: relative;
-  min-height: 100svh;               /* fill the first screen so the widget stays above the fold */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   padding-top: clamp(104px, 13vh, 140px);
-  padding-bottom: clamp(96px, 13vh, 128px);   /* leaves room for the scroll cue */
+  padding-bottom: clamp(48px, 8vw, 84px);
   overflow: hidden;
 }
 /* subtle accent glow behind the hero — not a colour wash, not a grid field */
@@ -305,26 +304,16 @@ img, svg { display: block; max-width: 100%; }
   flex-wrap: wrap;
   gap: 14px;
 }
-.hero__micro {
-  margin-top: 18px;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  color: var(--faint);
-  letter-spacing: 0.03em;
-}
 
-/* ---- scroll cue: bottom-centre of the first screen ---- */
+/* ---- scroll cue: sits at the bottom-centre of the first screen (desktop) ---- */
 .hero__scroll {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(14px, 3.5vh, 28px);
-  transform: translateX(-50%);
+  align-self: center;
+  margin-top: 20px;
   display: grid;
   justify-items: center;
   gap: 7px;
   color: var(--faint);
   transition: color 0.2s ease;
-  z-index: 2;
 }
 .hero__scroll:hover { color: var(--accent); }
 .hero__scroll span {
@@ -351,16 +340,8 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--radius);
   background:
     linear-gradient(180deg, var(--surface), var(--bg-1));
-  padding: 18px;
+  padding: 18px 18px 26px;
   box-shadow: 0 40px 90px -50px rgba(0,0,0,0.8);
-}
-.diagram figcaption {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--faint);
-  letter-spacing: 0.05em;
-  margin-top: 12px;
-  padding-inline: 4px;
 }
 .diagram svg { width: 100%; height: auto; max-height: 58vh; }
 
@@ -726,8 +707,25 @@ img, svg { display: block; max-width: 100%; }
 /* ------------------------------------------------------------------ *
  * 14. RESPONSIVE                                                     *
  * ------------------------------------------------------------------ */
+
+/* Desktop: hero fills the first screen and the scroll cue rests just above
+   its bottom edge. Text is sized down so the whole hero clears the fold.   */
+@media (min-width: 901px) {
+  .hero {
+    min-height: 100svh;
+    padding-top: clamp(88px, 11.5vh, 116px);
+    padding-bottom: clamp(18px, 3vh, 30px);
+  }
+  .hero__grid { flex: 1; align-content: center; }
+  .hero h1        { font-size: clamp(2.1rem, 0.6rem + 3vw, 3.35rem); margin-top: 18px; }
+  .hero__sub      { font-size: 1.1rem; line-height: 1.5; margin-top: 16px; }
+  .hero__actions  { margin-top: 22px; }
+  .hero__scroll   { margin-top: 14px; }
+  .diagram svg    { max-height: 52vh; }
+}
+
 @media (max-width: 900px) {
-  .hero { min-height: auto; padding-bottom: clamp(64px, 10vw, 96px); }
+  .hero { padding-bottom: clamp(64px, 10vw, 96px); }
   .hero__scroll { display: none; }
   .hero__grid { grid-template-columns: 1fr; }
   .diagram { max-width: 460px; }
